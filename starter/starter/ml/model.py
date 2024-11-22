@@ -1,5 +1,7 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-
+import pickle
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -17,8 +19,15 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
+    print('Training...')
+    model = SVC() #class_weight='balanced')
+    model.fit(X_train, y_train)
+    print('Train is done.')
 
-    pass
+    # evaluate on train set:
+    accuracy = model.score(X_train, y_train)
+    print(f"The accuracy of train set: {accuracy}")
+    return model
 
 
 def compute_model_metrics(y, preds):
@@ -48,7 +57,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : ???
+    model : SVM.
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -57,4 +66,13 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    return model.predict(X)
+
+def save_model(model, encoder, lb):
+    with open('model/model.pkl', 'wb') as f:
+        pickle.dump(model, f)
+    with open('model/encoder.pkl', 'wb') as f:
+        pickle.dump(encoder, f)
+    with open('model/lb.pkl', 'wb') as f:
+        pickle.dump(lb, f)
+    print('Saved model.')
