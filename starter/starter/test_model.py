@@ -2,13 +2,13 @@ import pickle
 import numpy as np
 from .ml import inference
 
-with open('model/model.pkl', 'rb') as f:
+with open('starter/model/model.pkl', 'rb') as f:
     model = pickle.load(f)
-with open('model/encoder.pkl', 'rb') as f:
+with open('starter/model/encoder.pkl', 'rb') as f:
     encoder = pickle.load(f)
-with open('model/lb.pkl', 'rb') as f:
+with open('starter/model/lb.pkl', 'rb') as f:
     lb = pickle.load(f)
-with open('data/data.pkl', 'rb') as f:
+with open('starter/data/data.pkl', 'rb') as f:
     X_train, y_train, X_test, y_test = pickle.load(f)
 
 def test_evaluate_train_set():

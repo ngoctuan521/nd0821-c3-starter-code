@@ -23,11 +23,11 @@ class DataField(BaseModel):
     hours_per_week: int = Field(..., exmaple=40)
     native_country: str = Field(..., exmaple="United-States")
 
-with open('model/model.pkl', 'rb') as f:
+with open('starter/model/model.pkl', 'rb') as f:
     model = pickle.load(f)
-with open('model/encoder.pkl', 'rb') as f:
+with open('starter/model/encoder.pkl', 'rb') as f:
     encoder = pickle.load(f)
-with open('model/lb.pkl', 'rb') as f:
+with open('starter/model/lb.pkl', 'rb') as f:
     lb = pickle.load(f)
 
 @app.get('/')
