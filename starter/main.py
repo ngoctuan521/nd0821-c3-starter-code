@@ -63,5 +63,6 @@ async def predict(data_point: DataField):
         rs['predict'] = '<=50K'
     else:
         rs['predict'] = '>50K'
+
     return rs
 
