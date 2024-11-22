@@ -1,0 +1,24 @@
+Evaluate on sclicing with value Private from workclass feature.
+precision: 0.9230769230769231, recal: 0.14201183431952663, fbeta: 0.24615384615384617
+--------------------
+Evaluate on sclicing with value Federal-gov from workclass feature.
+precision: 0.8571428571428571, recal: 0.06593406593406594, fbeta: 0.12244897959183673
+--------------------
+Evaluate on sclicing with value Self-emp-not-inc from workclass feature.
+precision: 0.8148148148148148, recal: 0.15602836879432624, fbeta: 0.2619047619047619
+--------------------
+Evaluate on sclicing with value ? from workclass feature.
+precision: 0.9, recal: 0.2, fbeta: 0.32727272727272727
+--------------------
+Evaluate on sclicing with value Local-gov from workclass feature.
+precision: 0.9333333333333333, recal: 0.10218978102189781, fbeta: 0.18421052631578946
+--------------------
+Evaluate on sclicing with value State-gov from workclass feature.
+precision: 1.0, recal: 0.15, fbeta: 0.2608695652173913
+--------------------
+Evaluate on sclicing with value Self-emp-inc from workclass feature.
+precision: 0.9565217391304348, recal: 0.16666666666666666, fbeta: 0.28387096774193543
+--------------------
+Evaluate on sclicing with value Never-worked from workclass feature.
+precision: 1.0, recal: 1.0, fbeta: 1.0
+--------------------

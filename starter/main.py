@@ -7,6 +7,7 @@ from starter.ml import inference, process_data
 
 app = FastAPI()
 
+
 class DataField(BaseModel):
     age: int = Field(..., example=39)
     workclass: str = Field(..., example="State-gov")
@@ -23,6 +24,7 @@ class DataField(BaseModel):
     hours_per_week: int = Field(..., exmaple=40)
     native_country: str = Field(..., exmaple="United-States")
 
+
 with open('starter/model/model.pkl', 'rb') as f:
     model = pickle.load(f)
 with open('starter/model/encoder.pkl', 'rb') as f:
@@ -30,10 +32,12 @@ with open('starter/model/encoder.pkl', 'rb') as f:
 with open('starter/model/lb.pkl', 'rb') as f:
     lb = pickle.load(f)
 
+
 @app.get('/')
 async def greeting():
     print('greeting################')
     return "Welcome to my project."
+
 
 @app.post("/predict")
 async def predict(data_point: DataField):
@@ -55,7 +59,7 @@ async def predict(data_point: DataField):
     ]
 
     sample, _, _, _ = process_data(X=sample, categorical_features=cat_features,
-        training=False, encoder=encoder, lb=lb)
+                                   training=False, encoder=encoder, lb=lb)
     pred = inference(model, sample)
 
     rs = {}
@@ -65,4 +69,3 @@ async def predict(data_point: DataField):
         rs['predict'] = '>50K'
 
     return rs
-

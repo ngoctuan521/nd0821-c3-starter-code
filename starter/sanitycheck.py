@@ -1,16 +1,16 @@
 from os import path
-
 import argparse
 import importlib
 import inspect
-import os
 import sys
 
 FAIL_COLOR = '\033[91m'
 OK_COLOR = '\033[92m'
 WARN_COLOR = '\033[93m'
 
+
 def run_sanity_check(test_dir):
+
 
     #assert path.isdir(test_dir), FAIL_COLOR+f"No direcotry named {test_dir} found in {os.getcwd()}"
     print('This script will perform a sanity test to ensure your code meets the criteria in the rubric.\n')
@@ -23,7 +23,6 @@ def run_sanity_check(test_dir):
 
     module_name = path.splitext(path.basename(filepath))[0]
     module = importlib.import_module(module_name)
-
 
     test_function_names = list(filter(lambda x: inspect.isfunction(getattr(module,x)) and not x.startswith('__'), dir(module)))
 

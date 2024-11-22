@@ -69,10 +69,10 @@ def inference(model, X):
     return model.predict(X)
 
 def save_model(model, encoder, lb):
-    with open('model/model.pkl', 'wb') as f:
+    with open('starter/model/model.pkl', 'wb') as f:
         pickle.dump(model, f)
-    with open('model/encoder.pkl', 'wb') as f:
+    with open('starter/model/encoder.pkl', 'wb') as f:
         pickle.dump(encoder, f)
-    with open('model/lb.pkl', 'wb') as f:
+    with open('starter/model/lb.pkl', 'wb') as f:
         pickle.dump(lb, f)
     print('Saved model.')

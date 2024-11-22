@@ -71,6 +71,6 @@ def process_data(
     return normalized_X, y, encoder, lb
 
 def save_data(X_train, y_train, X_test, y_test):
-    with open('data/data.pkl', 'wb') as f:
+    with open('starter/data/data.pkl', 'wb') as f:
         pickle.dump((X_train, y_train, X_test, y_test), f)
     print('Saved data.')
